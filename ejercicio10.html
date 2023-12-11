@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  
+  <form>
+    
+  <h1></h1>
+  
+  <!-- PASO 1: Construir los componentes HTML -->
+  <button type="button" id="bt1">Botón1</button>
+  <button type="button" id="bt2">Botón2</button>
+  <button type="button" id="bt3">Botón3</button>
+
+  <select name="lsCarreras" id="lsCarreras">
+    <option value="1">Ingenieria de Software</option>
+    <option value="2">Diseño Gráfico Digital</option>
+    <option value="3">Administración Industrial</option>
+  </select>
+  <!-- 
+    EVENTOS
+    keypress  : pulsación (2 acciones)
+   keydown   : mantener abajo/presionado
+   keyup     : detecta el botón fue liberado
+   -->
+
+    <input type="text" id="caja1" placeholder="Escribe aquí">
+    <input type="text" id="caja2" placeholder="Detectar el código de botón">
+
+  </form>
+
+  <script>
+    function $(identificador){
+      //Retornar una referencia a objeto/componente cualquiera
+      return document.querySelector(identificador)
+    }
+    //El código NO estará disponible hasta que el sitio cargue al 100%
+    document.addEventListener("DOMContentLoaded", () => {
+      $("#bt1").addEventListener("click", () => {
+      console.log("Botón 1 activado")
+     })
+
+      $("#bt2").addEventListener("click", () => {
+      console.log("Botón 2 activado")
+      })
+
+     $("#bt3").addEventListener("click", () => {
+      console.log("Botón 3 activado")
+     })
+
+     $("#lsCarreras").addEventListener("change", () =>{
+      console.log($("#lsCarreras").value)
+     })
+
+     $("#caja1").addEventListener("keyup", () => {
+      $("h1").innerHTML = $("#caja1").value
+     })
+
+      //La función de flecha NOS ENVIARÁ datos 
+     $("#caja2").addEventListener("keypress", (event) => {
+        if ( event.keyCode == 13){
+          console.log("Pulsaste ENTER")
+       }
+     })
+     
+    });
+
+    
+  </script>
+</body>
+</html>

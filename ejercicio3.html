@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="saludar" type="button" >Saludar</button>
+
+<!-- 3 párrafos que muestren SENATI  -->
+<!-- p{senati}*3 -->
+<p>senati</p>
+<p>senati</p>
+<p>senati</p>
+
+<!-- Para agregar clases coloque puntos -->
+<!-- p.importante.titulo -->
+<p class="importante titulo"></p>
+
+<!-- ul.menu>(li>a{Opción $})*5 -->
+<ul class="menu">
+  <li><a href="">Opción 1</a></li>
+  <li><a href="">Opción 2</a></li>
+  <li><a href="">Opción 3</a></li>
+  <li><a href="">Opción 4</a></li>
+  <li><a href="">Opción 5</a></li>
+</ul>
+<!-- button.galeria[type=button]#bt${Mostrar $}*5 -->
+<button class="galeria" type="button" id="bt1">Mostrar 1</button>
+<button class="galeria" type="button" id="bt2">Mostrar 2</button>
+<button class="galeria" type="button" id="bt3">Mostrar 3</button>
+<button class="galeria" type="button" id="bt4">Mostrar 4</button>
+<button class="galeria" type="button" id="bt5">Mostrar 5</button>
+
+  <script>
+    //Objeto que me permita manipular los 5 botones
+    //Referencia a un objeto QuerySelecto
+    //Referencia a multiples objetos QuerySelectorAll
+    const listaBotones = document.querySelectorAll(".galeria")
+
+    listaBotones.forEach(boton => {
+      boton.addEventListener("click",Saludar)
+    });
+
+
+
+
+
+
+    
+    //Eventos(click)
+    const boton = document.querySelector("#saludar")
+    boton.addEventListener("click",Saludar)
+
+    function Saludar(){  
+      console.log("Hola que hace")
+    }
+  </script>
+</body>
+</html>
